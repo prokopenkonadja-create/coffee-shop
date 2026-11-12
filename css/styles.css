@@ -1,125 +1,175 @@
-<!DOCTYPE html>
-<html lang="da">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="VÆRK Café & Bar på Nørrebro – specialkaffe, kunst, åbent atelier og fællesskab.">
-    <title>VÆRK Café & Bar | Kaffe, kunst og fællesskab</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <!-- Sidens header og hovednavigation -->
-    <header class="site-header">
-        <a class="brand" href="#top" aria-label="VÆRK Café & Bar – til toppen">VÆRK<span>CAFÉ & BAR</span></a>
-        <nav class="site-nav" aria-label="Hovednavigation">
-            <a href="#om">Om VÆRK</a>
-            <a href="#menu">Menu</a>
-            <a href="#rum">Vores rum</a>
-            <a class="nav-cta" href="#kontakt">Find os</a>
-        </nav>
-    </header>
+/* Grundfarver, typografi og afstande */
+:root {
+    color-scheme: light;
+    --color-cream: #f5f1e8;
+    --color-paper: #fbf9f4;
+    --color-sand: #e5ddce;
+    --color-brown: #48382e;
+    --color-muted: #817567;
+    --color-green: #354638;
+    --color-rust: #a5684d;
+    --font-main: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4.5rem;
+    --space-7: 6rem;
+    --content-width: 1160px;
+}
 
-    <main id="top">
-        <!-- Hero med caféens stemning og primære handling -->
-        <section class="hero" aria-labelledby="hero-title">
-            <img class="hero-image" src="images/caffe.jpg" alt="Et varmt og indbydende kig ind i VÆRK Café & Bar">
-            <div class="hero-shade"></div>
-            <div class="hero-content">
-                <p class="eyebrow">Nørrebro · København</p>
-                <h1 id="hero-title">Et sted at lande.<br><em>Et sted at skabe.</em></h1>
-                <p>Specialkaffe, kolde drinks og levende kunst — samlet under ét tag midt på Nørrebro.</p>
-                <a class="button button-light" href="#om">Oplev VÆRK <span aria-hidden="true">↗</span></a>
-            </div>
-            <span class="hero-note">Kaffe · kultur · fællesskab</span>
-        </section>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--color-paper); color: var(--color-brown); font-family: var(--font-main); font-size: 1rem; line-height: 1.65; }
+img { display: block; width: 100%; }
+a { color: inherit; }
+figure { margin: 0; }
+.section-wrap { width: min(100% - 2.5rem, var(--content-width)); margin-inline: auto; }
 
-        <!-- Kort præsentation af caféen og dens idé -->
-        <section class="intro section-wrap" id="om">
-            <div class="intro-label"><span class="small-mark">V</span><p>En café med plads<br>til mere</p></div>
-            <div class="intro-copy">
-                <p class="eyebrow">Velkommen til VÆRK</p>
-                <h2>God kaffe er kun<br>begyndelsen.</h2>
-                <p>VÆRK er mere end en kaffebar. Vi er et kreativt mødested, hvor du kan slå dig ned med en flat white, møde nye mennesker eller finde ro til dit næste projekt. Her skifter udstillingerne, atelieret er åbent, og der er altid plads ved bordet.</p>
-                <a class="text-link" href="#kontakt">Kig forbi på Nørrebro <span aria-hidden="true">→</span></a>
-            </div>
-            <figure class="intro-photo">
-                <img src="https://placehold.co/800x1000/79664f/f4eee3?text=Kaffe+%26+atelier" alt="Kaffekop ved et arbejdsbord i caféens åbne atelier">
-                <figcaption>Et kreativt hjørne af Nørrebro</figcaption>
-            </figure>
-        </section>
+/* Header og navigation */
+.site-header { min-height: 78px; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: var(--color-paper); }
+.brand { display: inline-flex; flex-direction: column; color: var(--color-green); text-decoration: none; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.08em; line-height: 1; }
+.brand span { margin-top: 0.35rem; font-size: 0.55rem; letter-spacing: 0.22em; }
+.site-nav { display: flex; align-items: center; gap: 0.75rem; }
+.site-nav a { font-size: 0.77rem; text-decoration: none; font-weight: 600; }
+.site-nav a:not(.nav-cta) { display: none; }
+.nav-cta { padding: 0.65rem 1rem; border-radius: 99px; background: var(--color-green); color: white; }
 
-        <!-- Udvalgte drikke og små favoritter fra menuen -->
-        <section class="menu-section" id="menu">
-            <div class="section-wrap">
-                <div class="section-heading">
-                    <div><p class="eyebrow">Brygget med omtanke</p><h2>På menuen</h2></div>
-                    <p>Gode råvarer, lokale favoritter<br>og lidt til den søde tand.</p>
-                </div>
-                <div class="menu-grid">
-                    <article class="menu-card"><span class="menu-number">01</span><div><h3>Espresso</h3><p>Dobbelt shot · dagens bønner</p></div><strong>28 kr.</strong></article>
-                    <article class="menu-card"><span class="menu-number">02</span><div><h3>Flat white</h3><p>Silkeblød mælk · dobbelt espresso</p></div><strong>42 kr.</strong></article>
-                    <article class="menu-card"><span class="menu-number">03</span><div><h3>Filterkaffe</h3><p>Håndbryg · skiftende mikroristeri</p></div><strong>25 kr.</strong></article>
-                    <article class="menu-card"><span class="menu-number">04</span><div><h3>Matcha latte</h3><p>Japansk matcha · varm eller iced</p></div><strong>48 kr.</strong></article>
-                    <article class="menu-card"><span class="menu-number">05</span><div><h3>Surdejsbolle</h3><p>Modnet ost · pisket smør</p></div><strong>35 kr.</strong></article>
-                    <article class="menu-card"><span class="menu-number">06</span><div><h3>Smørbagt croissant</h3><p>Frisk fra morgenstunden</p></div><strong>28 kr.</strong></article>
-                </div>
-                <p class="menu-footnote">Spørg os om dagens plantebaserede og glutenfri muligheder.</p>
-            </div>
-        </section>
+/* Hero med billede og tydelig invitation */
+.hero { position: relative; min-height: 590px; height: min(78vh, 760px); display: flex; align-items: center; overflow: hidden; background: var(--color-green); color: white; }
+.hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-image { object-fit: cover; object-position: center; }
+.hero-shade { background: linear-gradient(90deg, rgb(25 31 24 / 76%) 0%, rgb(25 31 24 / 48%) 54%, rgb(25 31 24 / 5%) 100%); }
+.hero-content { position: relative; z-index: 1; width: min(100% - 3rem, var(--content-width)); margin: 0 auto; padding-block: 4rem; }
+.eyebrow { margin: 0 0 1rem; color: var(--color-rust); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.19em; text-transform: uppercase; }
+.hero .eyebrow { color: #dfc4a5; }
+.hero h1 { max-width: 740px; margin: 0 0 1.2rem; font-size: clamp(3rem, 12vw, 6.8rem); line-height: 0.98; letter-spacing: -0.055em; }
+.hero h1 em { color: #e3c9aa; font-family: Georgia, serif; font-weight: 400; }
+.hero-content > p:not(.eyebrow) { max-width: 440px; margin: 0 0 2rem; color: #f3eee6; font-size: 1.05rem; }
+.button { display: inline-flex; align-items: center; gap: 1.6rem; min-height: 52px; padding: 0.8rem 1.35rem; border-radius: 99px; text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: transform 180ms ease, background 180ms ease; }
+.button:hover { transform: translateY(-2px); }
+.button-light { background: var(--color-cream); color: var(--color-green); }
+.button-dark { background: var(--color-green); color: white; }
+.hero-note { position: absolute; right: 2rem; bottom: 2rem; color: #f3eee6; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
 
-        <!-- Tre ting, der gør VÆRK til et særligt mødested -->
-        <section class="reasons section-wrap">
-            <div class="section-heading">
-                <div><p class="eyebrow">Mere end en kaffepause</p><h2>Et rum i bevægelse</h2></div>
-                <p>Kom for kaffen. Bliv for<br>alt det, der sker omkring den.</p>
-            </div>
-            <div class="reason-grid">
-                <article class="reason-card"><span class="reason-icon" aria-hidden="true">✳</span><p class="reason-index">01 / Smag</p><h3>Kaffe med karakter</h3><p>Vi samarbejder med små risterier og brygger hver kop med respekt for bønnen — og for din tid.</p></article>
-                <article class="reason-card"><span class="reason-icon" aria-hidden="true">⌂</span><p class="reason-index">02 / Skab</p><h3>Plads til at prøve</h3><p>Vores åbne atelier giver lokale kreative plads til at arbejde, dele idéer og vise processen frem.</p></article>
-                <article class="reason-card"><span class="reason-icon" aria-hidden="true">♡</span><p class="reason-index">03 / Mød</p><h3>Fællesskab uden planer</h3><p>Kom alene eller med venner. Her mødes naboer, studerende og nysgerrige over samme langbord.</p></article>
-            </div>
-        </section>
+/* Introduktion til caféens idé */
+.intro { display: grid; gap: 2rem; padding-block: var(--space-6); }
+.intro-label { display: flex; align-items: center; gap: 0.85rem; color: var(--color-muted); font-size: 0.78rem; }
+.intro-label p { margin: 0; }
+.small-mark { display: grid; width: 46px; aspect-ratio: 1; place-items: center; border: 1px solid var(--color-rust); border-radius: 50%; color: var(--color-rust); font-family: Georgia, serif; font-size: 1.4rem; }
+.intro-copy h2, .section-heading h2, .contact h2 { margin: 0 0 1.2rem; font-size: clamp(2.4rem, 8vw, 4.1rem); line-height: 1.05; letter-spacing: -0.055em; }
+.intro-copy > p:not(.eyebrow) { max-width: 510px; color: var(--color-muted); }
+.text-link { display: inline-block; margin-top: 0.8rem; color: var(--color-green); font-size: 0.85rem; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+.intro-photo { position: relative; }
+.intro-photo img { height: 410px; object-fit: cover; border-radius: 12px; }
+.intro-photo figcaption { padding-top: 0.7rem; color: var(--color-muted); font-size: 0.73rem; }
 
-        <!-- Billedgalleri fra café, atelier og udstillingsrum -->
-        <section class="gallery-section" id="rum">
-            <div class="section-wrap">
-                <div class="section-heading"><div><p class="eyebrow">Kig indenfor</p><h2>Et levende værksted</h2></div><p>Fra dagens første bryg<br>til sidste skål i baren.</p></div>
-                <div class="gallery">
-                    <figure class="gallery-item gallery-tall"><img src="https://placehold.co/900x1100/8d735d/f4eee3?text=Caf%C3%A9liv" alt="Gæster nyder kaffe ved caféens langbord"><figcaption>Plads til en langsom morgen</figcaption></figure>
-                    <figure class="gallery-item"><img src="https://placehold.co/900x650/6e765c/f4eee3?text=%C3%85bent+atelier" alt="Kunstner arbejder på et værk i det åbne atelier"><figcaption>Skab noget sammen</figcaption></figure>
-                    <figure class="gallery-item"><img src="https://placehold.co/900x650/b19578/f4eee3?text=Lokale+v%C3%A6rker" alt="Farverige værker hænger på væggen i caféens galleri"><figcaption>Kunst, der skifter med byen</figcaption></figure>
-                </div>
-            </div>
-        </section>
+/* Menuoversigt */
+.menu-section { padding-block: var(--space-6); background: var(--color-cream); }
+.section-heading { display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; margin-bottom: 2.5rem; }
+.section-heading h2 { margin-bottom: 0; }
+.section-heading > p { margin: 0; color: var(--color-muted); font-size: 0.9rem; }
+.menu-grid { display: grid; gap: 0.75rem; }
+.menu-card { display: grid; grid-template-columns: 2rem 1fr auto; align-items: center; gap: 0.8rem; padding: 1.15rem 0; border-bottom: 1px solid #d9d0c1; }
+.menu-number { align-self: start; padding-top: 0.25rem; color: var(--color-rust); font-size: 0.68rem; }
+.menu-card h3 { margin: 0; font-family: Georgia, serif; font-size: 1.22rem; font-weight: 500; }
+.menu-card p { margin: 0.15rem 0 0; color: var(--color-muted); font-size: 0.75rem; }
+.menu-card strong { font-size: 0.8rem; white-space: nowrap; }
+.menu-footnote { margin: 1.5rem 0 0; color: var(--color-muted); font-size: 0.75rem; }
 
-        <!-- Gæsternes ord om stemningen hos VÆRK -->
-        <section class="reviews section-wrap">
-            <p class="eyebrow">Ord fra vores gæster</p>
-            <div class="review-grid">
-                <article class="review"><p class="stars" aria-label="5 ud af 5 stjerner">★★★★★</p><blockquote>“Min yndlingsplads til at arbejde et par timer. Kaffen er skøn, og man går altid herfra med lidt ny inspiration.”</blockquote><p class="review-author">Maja · grafisk designer</p></article>
-                <article class="review review-featured"><p class="stars" aria-label="5 ud af 5 stjerner">★★★★★</p><blockquote>“Det føles som at træde ind i et fællesskab. Jeg kom for en kaffe og fandt et helt nyt stamsted.”</blockquote><p class="review-author">Jonas · nabo på Nørrebro</p></article>
-                <article class="review"><p class="stars" aria-label="5 ud af 5 stjerner">★★★★★</p><blockquote>“Dejligt uformelt, virkelig god matcha og altid noget spændende på væggene.”</blockquote><p class="review-author">Lea · kunststuderende</p></article>
-            </div>
-        </section>
+/* Tre gode grunde til at besøge VÆRK */
+.reasons { padding-block: var(--space-6); }
+.reason-grid { display: grid; gap: 1rem; }
+.reason-card { min-height: 250px; padding: 1.5rem; border: 1px solid var(--color-sand); border-radius: 12px; }
+.reason-icon { color: var(--color-rust); font-size: 1.65rem; }
+.reason-index { margin: 1.6rem 0 0.4rem; color: var(--color-rust); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+.reason-card h3 { margin: 0; font-family: Georgia, serif; font-size: 1.45rem; font-weight: 500; }
+.reason-card > p:last-child { max-width: 330px; margin-bottom: 0; color: var(--color-muted); font-size: 0.85rem; }
 
-        <!-- Kontakt, adresse og åbningstider -->
-        <section class="contact-section" id="kontakt">
-            <div class="section-wrap contact">
-                <div class="contact-intro"><p class="eyebrow">Vi glæder os til at se dig</p><h2>Kom som du er.<br>Bliv lidt længere.</h2><p>Nørrebros næste kaffepause venter lige om hjørnet.</p><a class="button button-dark" href="https://maps.google.com/?q=N%C3%B8rrebrogade+42,+2200+K%C3%B8benhavn+N">Find vej til VÆRK <span aria-hidden="true">↗</span></a></div>
-                <div class="contact-details">
-                    <div><h3>Besøg os</h3><address>Nørrebrogade 42<br>2200 København N</address><a href="tel:+4533112244">+45 33 11 22 44</a><a href="mailto:hej@vaerkcafe.dk">hej@vaerkcafe.dk</a></div>
-                    <div><h3>Åbningstider</h3><dl class="hours"><div><dt>Mandag – torsdag</dt><dd>08:00 – 20:00</dd></div><div><dt>Fredag – lørdag</dt><dd>08:00 – 23:00</dd></div><div><dt>Søndag</dt><dd>09:00 – 18:00</dd></div></dl></div>
-                </div>
-            </div>
-        </section>
-    </main>
+/* Billedgalleri */
+.gallery-section { padding-block: var(--space-6); background: #ebe5da; }
+.gallery { display: grid; gap: 0.85rem; }
+.gallery-item { overflow: hidden; border-radius: 10px; }
+.gallery-item img { height: 240px; object-fit: cover; transition: transform 350ms ease; }
+.gallery-item:hover img { transform: scale(1.025); }
+.gallery-item figcaption { padding: 0.65rem 0 0; color: var(--color-muted); font-size: 0.75rem; }
 
-    <!-- Footer med copyright og sociale kanaler -->
-    <footer class="site-footer">
-        <a class="brand footer-brand" href="#top">VÆRK<span>CAFÉ & BAR</span></a>
-        <p>Et kreativt mødested på Nørrebro.</p>
-        <div class="social-links"><a href="https://www.instagram.com/" aria-label="Besøg VÆRK på Instagram">Instagram ↗</a><a href="https://www.facebook.com/" aria-label="Besøg VÆRK på Facebook">Facebook ↗</a></div>
-        <small>© 2026 VÆRK Café & Bar. Alle rettigheder forbeholdes.</small>
-    </footer>
-</body>
-</html>
+/* Anmeldelser */
+.reviews { padding-block: var(--space-6); }
+.reviews > .eyebrow { margin-bottom: 2rem; }
+.review-grid { display: grid; gap: 1rem; }
+.review { padding: 1.4rem; border: 1px solid var(--color-sand); border-radius: 12px; }
+.review-featured { background: var(--color-green); color: white; }
+.stars { margin: 0; color: #c99163; letter-spacing: 0.2em; }
+.review blockquote { margin: 1.1rem 0 1.5rem; font-family: Georgia, serif; font-size: 1.2rem; line-height: 1.45; }
+.review-author { margin: 0; color: var(--color-muted); font-size: 0.75rem; }
+.review-featured .review-author { color: #d5d4cb; }
+
+/* Kontakt og åbningstider */
+.contact-section { padding-block: var(--space-6); background: #e4ddcf; }
+.contact { display: grid; gap: 3rem; }
+.contact h2 { font-size: clamp(2.6rem, 9vw, 4.4rem); }
+.contact-intro > p:not(.eyebrow) { margin-bottom: 1.5rem; color: var(--color-muted); }
+.contact-details { display: grid; gap: 2rem; }
+.contact-details h3 { margin: 0 0 0.8rem; font-family: Georgia, serif; font-size: 1.35rem; font-weight: 500; }
+.contact-details address, .contact-details > div > a { display: block; margin: 0 0 0.45rem; color: var(--color-muted); font-size: 0.86rem; font-style: normal; text-decoration: none; }
+.hours { margin: 0; }
+.hours div { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.45rem; border-bottom: 1px solid #cfc5b5; font-size: 0.77rem; }
+.hours dt { color: var(--color-muted); }
+.hours dd { margin: 0; font-weight: 700; white-space: nowrap; }
+
+/* Footer og sociale links */
+.site-footer { display: grid; justify-items: center; gap: 1rem; padding: 2.5rem 1.25rem; background: var(--color-green); color: var(--color-cream); text-align: center; }
+.footer-brand { color: var(--color-cream); }
+.site-footer > p { margin: 0; color: #d4d6cc; font-size: 0.78rem; }
+.social-links { display: flex; gap: 1.4rem; }
+.social-links a { color: var(--color-cream); font-size: 0.78rem; text-decoration: none; }
+.site-footer small { color: #c2c7ba; font-size: 0.68rem; }
+
+@media (min-width: 700px) {
+    .section-wrap { width: min(100% - 4rem, var(--content-width)); }
+    .site-header { padding-inline: 2rem; }
+    .site-nav { gap: 1.6rem; }
+    .site-nav a { font-size: 0.82rem; }
+    .site-nav a:not(.nav-cta) { display: inline; }
+    .hero-content { width: min(100% - 4rem, var(--content-width)); }
+    .intro { grid-template-columns: 0.7fr 1.3fr; align-items: start; padding-block: var(--space-7); }
+    .intro-label { padding-top: 0.6rem; }
+    .intro-photo { grid-column: 2; }
+    .intro-photo img { height: 480px; }
+    .menu-section, .reasons, .gallery-section, .reviews, .contact-section { padding-block: var(--space-7); }
+    .section-heading { flex-direction: row; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 3rem; }
+    .section-heading > p { padding-bottom: 0.35rem; }
+    .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; }
+    .reason-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .reason-card { padding: 1.6rem; }
+    .gallery { grid-template-columns: 1.05fr 0.95fr; grid-template-rows: repeat(2, 250px); gap: 1.25rem; }
+    .gallery-tall { grid-row: span 2; }
+    .gallery-item img { height: 100%; min-height: 0; }
+    .review-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .review { padding: 1.6rem; }
+    .contact { grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .contact-details { grid-template-columns: 0.8fr 1.2fr; gap: 1.5rem; padding-top: 0.5rem; }
+    .site-footer { grid-template-columns: 1fr 1fr 1fr; justify-items: start; padding: 2.5rem max(2rem, calc((100vw - var(--content-width)) / 2)); text-align: left; }
+    .site-footer > p { justify-self: center; }
+    .social-links { justify-self: end; }
+    .site-footer small { grid-column: 1 / -1; }
+}
+
+@media (min-width: 1020px) {
+    .site-header { padding-inline: max(2rem, calc((100vw - var(--content-width)) / 2)); }
+    .hero { min-height: 680px; }
+    .hero-content { width: min(100% - 4rem, var(--content-width)); }
+    .intro { grid-template-columns: 0.7fr 1.1fr 1.2fr; gap: 2.5rem; align-items: center; }
+    .intro-photo { grid-column: auto; }
+    .intro-photo img { height: 540px; }
+    .menu-grid { column-gap: 5rem; }
+    .reason-card { min-height: 280px; padding: 2rem; }
+    .gallery { grid-template-rows: repeat(2, 300px); gap: 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
